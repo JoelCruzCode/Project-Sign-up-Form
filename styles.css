@@ -1,31 +1,33 @@
 :root {
   height: 100vh;
-  background-color: grey;
+  background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 22px;
   font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .content {
   display: flex;
   /* sticky footer */
-  /* min-height: 100vh; */
+  min-height: 100vh;
 }
 
 .side-bar {
-  background-color: aliceblue;
   position: relative;
   width: 40vw;
-  height: 100vh;
 }
 
 .side-bar > img {
   width: 100%;
   height: 100%;
-  /* min-height: 100vh; */
 }
 
 .logo {
@@ -41,7 +43,7 @@
 
 .logo img {
   height: 300px;
-  opacity: 100%;
+  overflow: hidden;
 }
 
 .logo p {
@@ -49,52 +51,63 @@
   color: white;
   font-family: Norse;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  /* width: max(575px, 60vw); */
   width: 60vw;
+  min-width: 600px;
 }
 
 .intro {
-  height: 35vh;
-  /* width: 60vw; */
+  /* height: 35%; */
+  padding: 20vh 20vw 0 min(60px, 2vw);
+  min-width: 400px;
 }
 
 .form-container {
   padding-left: 60px;
-  background-color: brown;
-  height: 30vh;
-  /* display: flex; */
-  /* display: column; */
+  padding-left: min(60px, 2vw);
+  background-color: white;
+  height: 30%;
 }
 
 .form-container form {
+  padding-top: 20px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  width: max(485px, 50vw);
 }
 
 .form-container input {
-  width: 300px;
+  padding-left: 0px;
+  width: clamp(200px, 100%, 300px);
+  height: 35px;
   border-radius: 6px;
-  border: 1 solid rgb(13, 10, 187);
-  /* flex-wrap: wrap; */
+  border: 1 solid rgb(237, 237, 247);
 }
 
 .form-row {
+  width: 34%;
   display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .account-container {
   position: relative;
-  height: 35vh;
+  /* height: 35%; */
 }
 
 .account {
   position: absolute;
   top: 40px;
-  left: 60px;
+  left: min(60px, 2vw);
 }
 .account button {
   width: 250px;
@@ -106,7 +119,11 @@
   border-radius: 8px;
 }
 
+.account a,
+p {
+  font-size: 1.2rem;
+}
+
 .account a {
   color: #596d48;
-  font-size: 1.2rem;
 }
